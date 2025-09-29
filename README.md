@@ -1,15 +1,6 @@
-📖 Project Overview
+#Project Overview
 
 This project provides a complete drone simulation environment integrating:
-
-PX4 Autopilot for UAV control
-
-Gazebo (Garden) for 3D simulation
-
-MAVSDK (Python) for mission planning and control
-
-ROS2 (optional) for advanced robotics integration
-
 It is designed for students, researchers, and developers to experiment with UAV missions, autopilot, and robotics workflows.
 
 **Author:** Hamza  
