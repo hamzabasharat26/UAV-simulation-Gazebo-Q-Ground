@@ -62,12 +62,12 @@ UAV-simulation-Gazebo-Q-Ground/
 
 ## Demo
 - [Demo.webm](https://github.com/user-attachments/assets/7dfe4802-c791-4b45-a12a-7595f9f2d20f)
-- 
-- ![Q_Ground_mission_plan](https://github.com/user-attachments/assets/16784278-001f-49a1-ac3c-947149f43cb3)
 
 - ![Mission](https://github.com/user-attachments/assets/0a923380-f8cf-4ca7-9c06-eaa31d5a6bfd)
 
 - <img width="1658" height="897" alt="Gazebo_Quad_Drone" src="https://github.com/user-attachments/assets/1f380124-9ea3-4cae-96ae-6721b28f7472" />
+
+- ![Q_Ground_mission_plan](https://github.com/user-attachments/assets/16784278-001f-49a1-ac3c-947149f43cb3)
 
 ---
 
