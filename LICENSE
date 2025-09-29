@@ -1,6 +1,38 @@
 MIT License
 
 Copyright (c) 2025 Hamza Basharat
+MIT License
+
+Copyright (c) 2025 Hamza
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+...
+(standard MIT license text; paste full MIT body)
+
+mavsdk==3.10.2
+grpcio==1.75.1
+protobuf==6.32.1
+
+
+---
+
+## 5) `install.sh` (Linux, tested on Ubuntu-like)
+```bash
+#!/usr/bin/env bash
+set -e
+echo "=== Install system deps (requires sudo) ==="
+
+# Basic tools
+sudo apt update
+sudo apt install -y git python3-pip python3-venv curl wget unzip build-essential
+
+# Optional: for recording / GUI
+sudo apt install -y ffmpeg obs-studio
+
+echo "=== Python deps will be installed into your venv (see README) ==="
+
+echo "=== Done. Follow README to setup PX4 and run the demo ==="
+---
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
