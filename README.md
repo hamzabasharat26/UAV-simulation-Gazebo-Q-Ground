@@ -1,9 +1,9 @@
 # UAV-simulation-Gazebo-Q-Ground
-# Drone Demo Project — PX4 + Gazebo + MAVSDK + (optional ROS2)
+# Drone Demo Project — PX4 + Gazebo + MAVSDK + (ROS2)
 
 **Author:** Hamza  
 **Goal:** Beginner-friendly, internship-ready autonomous drone demo in simulation.  
-This repo shows a complete pipeline: PX4 SITL + Gazebo simulation → automated mission via MAVSDK (Python). Optional ROS2 integration is provided.
+This repo shows a complete pipeline: PX4 SITL + Gazebo simulation → automated mission via MAVSDK (Python).ROS2 integration is provided.
 
 ---
 
