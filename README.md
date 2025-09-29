@@ -6,6 +6,7 @@
 This repo shows a complete pipeline: PX4 SITL + Gazebo simulation → automated mission via MAVSDK (Python). Optional ROS2 integration is provided.
 
 ---
+
 ![Q_Ground_mission_plan](https://github.com/user-attachments/assets/1072de83-e2fb-4aa9-b219-26af9198e828)
 
 ## What this repo contains
@@ -19,12 +20,15 @@ This repo shows a complete pipeline: PX4 SITL + Gazebo simulation → automated 
 - `media/` — screenshot / demo assets (you add demo GIF/video here)
 
 ---
+
 [Demo.webm](https://github.com/user-attachments/assets/1226f11a-e616-4e0d-8b4b-ce15ad755248)
 
 
 ## Quick native setup (Ubuntu)
 > Recommended: use an Ubuntu machine with enough disk (30+ GB free). If you only have 24.04 (Noble), the repo works but some ROS/Gazebo packages may need tweaks — Docker path is safest.
+
 <img width="1658" height="897" alt="Gazebo_Quad_Drone" src="https://github.com/user-attachments/assets/b1e1d1a7-0b04-4e92-926f-108304f3a3d0" />
+
 ![Mission](https://github.com/user-attachments/assets/2264fd44-e603-4b3c-9cb4-72a94615f93d)
 
 1. Clone this repo:
