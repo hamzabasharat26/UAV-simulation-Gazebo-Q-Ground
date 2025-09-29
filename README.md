@@ -31,41 +31,35 @@ This repo shows a complete pipeline: PX4 SITL + Gazebo simulation → automated 
 
 ![Mission](https://github.com/user-attachments/assets/2264fd44-e603-4b3c-9cb4-72a94615f93d)
 
-1. Clone this repo:
-```bash
-git clone https://github.com/hamzabasharat26/UAV simulation Gazebo & Q-Ground.git
-cd drone-demo-project
+🚀 Getting Started
+1. Clone this repository
+git clone "https://github.com/hamzabasharat26/UAV-simulation-Gazebo-Q-Ground.git"
+cd UAV-simulation-Gazebo-Q-Ground
 
-2. Install dependencies (native):
-```bash
+2. Install dependencies (native)
 chmod +x install.sh
 ./install.sh
 
-3. Python3 -m venv venv:
-```bash
+3. Create and activate a Python virtual environment
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-4. Get PX4 (one-time, large download; ~1.5–3GB depending on branch):
-```bash
+4. Get PX4 (one-time, large download)
 mkdir -p px4_ws
 cd px4_ws
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 cd PX4-Autopilot
-# PX4 setup script (may take a while)
-bash ./Tools/setup/ubuntu.sh
+bash ./Tools/setup/ubuntu.sh   # PX4 setup script (takes a while)
 
-
-5. Run PX4 SITL with Gazebo(Garden):
-```bash
+5. Run PX4 SITL with Gazebo (Garden)
 cd px4_ws/PX4-Autopilot
 make px4_sitl gz_x500
 
-6. Run mission:
-```bash
-cd <repo root>
+6. Run a sample mission
+cd <repo-root>
 source venv/bin/activate
 python3 simple_mission.py
+
 
 
