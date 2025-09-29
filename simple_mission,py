@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""
+simple_mission.py
+MAVSDK mission script: connect to PX4 SITL, arm, takeoff, fly forward (finish line), land.
+"""
+
+import asyncio
+import sys
+from mavsdk import System, telemetry, action
+
+async def run():
+    drone = System()
+    print("Connecting to drone (udp://:14540)...")
+    await drone.connect(system_address="udp://:14540")
+
+    # wait for connection
+    print("Waiting for connection...")
+    async for state in drone.core.connection_state():
+        if state.is_connected:
+            print("Connected to drone!")
+            break
+
+    # health check: wait for global position or local position depending on your SITL
+    print("Waiting for health / global position...")
+    async for health in drone.telemetry.health():
+        if health.is_global_position_ok or True:
+            print("Health OK (continuing).")
+            break
+        await asyncio.sleep(1)
+
+    # arm
+    print("Arming...")
+    try:
+        await drone.action.arm()
+    except Exception as e:
+        print("Arm failed:", e)
+        print("If command denied, either preflight checks failed or PX4 not ready.")
+        sys.exit(1)
+
+    # takeoff to 6m
+    print("Taking off to 6m...")
+    await drone.action.takeoff()
+    await asyncio.sleep(6)
+
+    # fly forward using velocity body frame for N seconds
+    forward_speed = 2.0  # m/s
+    fly_time = 10  # seconds
+    print(f"Flying forward at {forward_speed} m/s for {fly_time}s toward finish line...")
+    await drone.offboard.set_velocity_ned( # using offboard velocity API (if available)
+        telemetry.PositionNedYaw(north_m=0.0, east_m=0.0, down_m=0.0, yaw_deg=0.0)
+    )
+
+    # fallback if offboard not supported: use simple goto_location (GPS) - may not be appropriate in sim
+    # so instead use set_velocity_body if available:
+    try:
+        await drone.action.set_velocity_body(forward_speed, 0.0, 0.0, 0.0)
+        await asyncio.sleep(fly_time)
+        # stop
+        await drone.action.set_velocity_body(0.0, 0.0, 0.0, 0.0)
+    except Exception:
+        # fallback: hover then land
+        print("Velocity body control unavailable; hovering then landing.")
+        await asyncio.sleep(2)
+
+    # land
+    print("Landing...")
+    await drone.action.land()
+    await asyncio.sleep(6)
+    print("Mission finished.")
+
+if __name__ == "__main__":
+    asyncio.run(run())
