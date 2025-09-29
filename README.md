@@ -154,7 +154,7 @@ This project is licensed under the [MIT License](LICENSE). You are free to use a
 ## Author
 
 **Hamza Basharat**  
-Beginner-friendly, internship-ready autonomous drone simulation.  
+Beginner-friendly, autonomous drone simulation.  
 Contact: [GitHub Profile](https://github.com/hamzabasharat26)
 
 ---
