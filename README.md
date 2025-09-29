@@ -35,31 +35,31 @@ UAV-simulation-Gazebo-Q-Ground/
 ![Mission](https://github.com/user-attachments/assets/2264fd44-e603-4b3c-9cb4-72a94615f93d)
 
 🚀 Getting Started
-1️⃣ Clone this repository
+1️. Clone this repository
 git clone "https://github.com/hamzabasharat26/UAV-simulation-Gazebo-Q-Ground.git"
 cd UAV-simulation-Gazebo-Q-Ground
 
-2️⃣ Install dependencies (native)
+2️. Install dependencies (native)
 chmod +x install.sh
 ./install.sh
 
-3️⃣ Setup Python virtual environment
+3️.Setup Python virtual environment
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-4️⃣ Get PX4 (large download, one-time setup)
+4️. Get PX4 (large download, one-time setup)
 mkdir -p px4_ws
 cd px4_ws
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 cd PX4-Autopilot
 bash ./Tools/setup/ubuntu.sh
 
-5️⃣ Run PX4 SITL with Gazebo (Garden)
+5️. Run PX4 SITL with Gazebo (Garden)
 cd px4_ws/PX4-Autopilot
 make px4_sitl gz_x500
 
-6️⃣ Run a sample MAVSDK mission
+6️. Run a sample MAVSDK mission
 cd <repo-root>
 source venv/bin/activate
 python3 simple_mission.py
@@ -80,15 +80,11 @@ python3 simple_mission.py
 
 Ubuntu 20.04 / 22.04 (recommended)
 
-Python 3.8+
-
-PX4 Autopilot
-
-Gazebo Garden
-
-MAVSDK-Python
-
-(Optional) ROS2 Humble
+-Python 3.8+
+-PX4 Autopilot
+-Gazebo Garden
+-MAVSDK-Python
+-ROS2 Humble
 
 📜 License
 
